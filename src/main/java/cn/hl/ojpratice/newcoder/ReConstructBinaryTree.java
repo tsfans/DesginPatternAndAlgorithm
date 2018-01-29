@@ -1,4 +1,4 @@
-package cn.hl.newcoder;
+package cn.hl.ojpratice.newcoder;
 
 public class ReConstructBinaryTree {
 
