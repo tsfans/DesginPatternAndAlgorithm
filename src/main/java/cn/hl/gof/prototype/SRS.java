@@ -1,19 +1,21 @@
+/**
+ * 
+ */
 package cn.hl.gof.prototype;
 
-public class FAR implements OfficeDocument{
-
+public class SRS implements OfficeDocument{
 	@Override
 	public OfficeDocument clone() {
-		OfficeDocument far = null;
+		OfficeDocument srs = null;
 		try {
-			far = (OfficeDocument)super.clone();
+			srs = (OfficeDocument)super.clone();
 		}catch(CloneNotSupportedException e) {
 			System.out.println("不支持复制!");
-		}return far;
+		}
+		return srs;
 	}
-	
 	@Override
 	public void display() {
-		System.out.println("《可行性分析报告》");
+		System.out.println("《软件需求规格说明书》");
 	}
 }
