@@ -5,9 +5,7 @@ import cn.hl.gof.util.XMLUtil;
 public class PhoneControllerTest {
 	
 	public static void main(String[] args) {
-		String path = XMLUtil.getPath(PhoneControllerTest.class, "config.xml");
-		String className = XMLUtil.getValue(path, "className");
-		ControllerFactory factory = (ControllerFactory) XMLUtil.getBean(className);
+		ControllerFactory factory = (ControllerFactory) XMLUtil.getBeanByPatternName("phoneController");
 		OperationController oc = factory.createOperationController();
 		InterfaceController ic = factory.createInterfaceController();
 		oc.show();

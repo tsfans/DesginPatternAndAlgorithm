@@ -6,7 +6,7 @@ public class SimpleFactoryTest {
 
 	
 	public static void main(String[] args) {
-		String type = XMLUtil.getValue(XMLUtil.getPath(SimpleFactoryTest.class,"config.xml"), "toolType");
+		String type = XMLUtil.getValue("simpleFactory");
 		PaintingTools tool;
 		try {
 			tool = PaintingToolFactory.getTool(type);

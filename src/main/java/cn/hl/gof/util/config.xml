@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>  
+    <simpleFactory>square</simpleFactory>
+    <factoryMethod>cn.hl.gof.factorymethod.PngReaderFactory</factoryMethod>
+    <abstractFactory>cn.hl.gof.abstractfactory.SummerSkinFactory</abstractFactory>
+    <phoneController>cn.hl.gof.abstractfactory.phonecontroller.WindowsControllerFactory</phoneController>  
+    <builder>cn.hl.gof.builder.ConcisePlayerBuilder</builder>
+    <adapter>cn.hl.gof.adapter.EncodeAdapter2</adapter>
+</config>

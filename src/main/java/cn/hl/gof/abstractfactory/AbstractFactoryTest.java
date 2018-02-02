@@ -5,9 +5,7 @@ import cn.hl.gof.util.XMLUtil;
 public class AbstractFactoryTest {
 
 	public static void main(String[] args) {
-		String path = XMLUtil.getPath(AbstractFactoryTest.class, "config.xml");
-		String className = XMLUtil.getValue(path, "className");
-		SkinFactory factory = (SkinFactory) XMLUtil.getBean(className);
+		SkinFactory factory = (SkinFactory) XMLUtil.getBeanByPatternName("abstractFactory");
 		Button b = factory.createButton();
 		TextField t = factory.createTextField();
 		ComboBox c = factory.createComboBox();

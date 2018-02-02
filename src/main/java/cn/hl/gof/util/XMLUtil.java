@@ -46,6 +46,9 @@ public class XMLUtil {
 		}
 		return value;
 	}
+	public static String getValue(String tagName) {
+		return getValue(getPath(XMLUtil.class,"config.xml"),tagName);
+	}
 	
 	/**
 	 * 
@@ -67,6 +70,19 @@ public class XMLUtil {
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 		}
+		return o;
+	}
+	/**
+	 * 
+	 * <p>统一配置，根据pattern name获取对象</p>
+	 * @date 2018年2月2日下午4:51:53
+	 * @param pattern 模式名称
+	 * @return
+	 */
+	public static Object getBeanByPatternName(String pattern) {
+		String path = getPath(XMLUtil.class,"config.xml");
+		String className = getValue(path,pattern);
+		Object o = getBean(className);
 		return o;
 	}
 	
