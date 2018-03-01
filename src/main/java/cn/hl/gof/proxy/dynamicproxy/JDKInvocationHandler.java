@@ -4,7 +4,11 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
-
+/**
+ * jdk动态代理实现
+ * @author HULIN
+ * @date 2018年3月1日下午4:55:07
+ */
 public class JDKInvocationHandler implements InvocationHandler{
 
 	private Object target;

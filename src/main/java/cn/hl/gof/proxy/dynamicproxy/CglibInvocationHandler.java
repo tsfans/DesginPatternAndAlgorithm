@@ -6,6 +6,11 @@ import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
 
+/**
+ * Cglib动态代理实现
+ * @author HULIN
+ * @date 2018年3月1日下午4:55:36
+ */
 public class CglibInvocationHandler implements MethodInterceptor{
 	
 	private static CglibInvocationHandler handler = new CglibInvocationHandler();

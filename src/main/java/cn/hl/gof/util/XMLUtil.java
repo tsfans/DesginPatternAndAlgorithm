@@ -74,7 +74,7 @@ public class XMLUtil {
 	}
 	/**
 	 * 
-	 * <p>统一配置，根据pattern name获取对象</p>
+	 * <p>统一配置，根据config.xml中的节点名获取对象</p>
 	 * @date 2018年2月2日下午4:51:53
 	 * @param pattern 模式名称
 	 * @return

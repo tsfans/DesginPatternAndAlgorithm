@@ -6,4 +6,6 @@
     <phoneController>cn.hl.gof.abstractfactory.phonecontroller.WindowsControllerFactory</phoneController>  
     <builder>cn.hl.gof.builder.ConcisePlayerBuilder</builder>
     <adapter>cn.hl.gof.adapter.EncodeAdapter2</adapter>
+    <fileFormat>cn.hl.gof.bridge.TXTDataConverter</fileFormat>
+    <dataBase>cn.hl.gof.bridge.RedisDataReader</dataBase>
 </config>
