@@ -1,10 +1,14 @@
 package cn.hl.gof.adapter;
 
-public class EncodeAdapter implements Encoder{
+/**
+ * 对象适配器
+ * @author HULIN
+ */
+public class EncodeObjectAdapter implements Encoder{
 
 	private EncodeModule encode;
 	
-	public EncodeAdapter() {
+	public EncodeObjectAdapter() {
 		this.encode = new EncodeModule();
 	}
 	

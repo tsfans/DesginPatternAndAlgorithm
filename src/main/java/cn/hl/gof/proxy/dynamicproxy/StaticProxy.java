@@ -7,16 +7,16 @@ package cn.hl.gof.proxy.dynamicproxy;
  */
 public class StaticProxy implements ProxyInterface{
 
-	private RealObject ro;
+	private ProxyInterface pi;
 	
-	public StaticProxy(RealObject ro) {
-		this.ro = ro;
+	public StaticProxy(ProxyInterface pi) {
+		this.pi = pi;
 	}
 	
 	@Override
 	public void say() {
 		before();
-		ro.say();
+		pi.say();
 		after();
 	}
 	

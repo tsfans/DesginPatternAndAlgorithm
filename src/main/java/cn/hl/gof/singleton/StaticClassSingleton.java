@@ -10,17 +10,17 @@ import java.io.Serializable;
  * @date 2018年1月29日下午5:34:08
  * @version 1.0.0
  */
-public class Singleton implements Serializable{
+public class StaticClassSingleton implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
-	private Singleton() {}
+	private StaticClassSingleton() {}
 	
 	private static class HolderClass {
-		private static final Singleton instance = new Singleton();
+		private static final StaticClassSingleton instance = new StaticClassSingleton();
 	}
 	
-	public static Singleton getInstance() {
+	public static StaticClassSingleton getInstance() {
 		return HolderClass.instance;
 	}
 	

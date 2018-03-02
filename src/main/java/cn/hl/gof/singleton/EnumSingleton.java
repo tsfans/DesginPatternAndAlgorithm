@@ -6,11 +6,11 @@ package cn.hl.gof.singleton;
  * @author HULIN
  * @date 2018年3月1日下午4:38:09
  */
-public class EnumSingleTon {
+public class EnumSingleton {
 
-	private EnumSingleTon() {}
+	private EnumSingleton() {}
 	
-	public static EnumSingleTon getInstance() {
+	public static EnumSingleton getInstance() {
 		return SingleTonEnum.INSTANCE.getInstance();
 	}
 	
@@ -18,13 +18,13 @@ public class EnumSingleTon {
 		
 		INSTANCE;
 		
-		private EnumSingleTon singleTon;
+		private EnumSingleton singleTon;
 		
 		private SingleTonEnum() {
-			singleTon = new EnumSingleTon();
+			singleTon = new EnumSingleton();
 		}
 		
-		public EnumSingleTon getInstance() {
+		public EnumSingleton getInstance() {
 			return singleTon;
 		}
 	}

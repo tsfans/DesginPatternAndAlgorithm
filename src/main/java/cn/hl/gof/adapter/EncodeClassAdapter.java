@@ -1,6 +1,10 @@
 package cn.hl.gof.adapter;
 
-public class EncodeAdapter2 extends EncodeModule implements Encoder{
+/**
+ * 类适配器
+ * @author HULIN
+ */
+public class EncodeClassAdapter extends EncodeModule implements Encoder{
 
 	@Override
 	public void encodePassword(String password) {
