@@ -8,4 +8,5 @@
     <adapter>cn.hl.gof.adapter.EncodeClassAdapter</adapter>
     <fileFormat>cn.hl.gof.bridge.TXTDataConverter</fileFormat>
     <dataBase>cn.hl.gof.bridge.RedisDataReader</dataBase>
+    <strategy>cn.hl.gof.strategy.HarrierPlane</strategy>
 </config>
