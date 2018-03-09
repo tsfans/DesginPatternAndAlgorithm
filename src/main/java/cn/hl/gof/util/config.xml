@@ -9,4 +9,5 @@
     <fileFormat>cn.hl.gof.bridge.TXTDataConverter</fileFormat>
     <dataBase>cn.hl.gof.bridge.RedisDataReader</dataBase>
     <strategy>cn.hl.gof.strategy.HarrierPlane</strategy>
+    <templatemethod>cn.hl.gof.templatemethod.XmlDataViewer</templatemethod>
 </config>
