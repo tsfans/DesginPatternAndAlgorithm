@@ -35,7 +35,8 @@ public class RemoveEvens {
 		removeEvens(al);
 		System.out.println();
 		removeEvens(ll);
-		MyArrayList<Integer> mal = new MyArrayList<>();
+//		MyArrayList<Integer> mal = new MyArrayList<>();
+		MyLinkedList<Integer> mal = new MyLinkedList<>();
 		mal.add(2);
 		mal.add(-2);
 		mal.add(3);

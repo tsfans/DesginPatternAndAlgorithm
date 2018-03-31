@@ -7,7 +7,8 @@ public class PrintListFromTailToHead {
 
 	/**
 	 * 
-	 * <p>Description: 输入一个链表，从尾到头打印链表每个节点的值。</p>
+	 * 输入一个链表，从尾到头打印链表每个节点的值
+	 * 
 	 * @date 2017年12月26日下午5:22:15
 	 * @param listNode
 	 * @return

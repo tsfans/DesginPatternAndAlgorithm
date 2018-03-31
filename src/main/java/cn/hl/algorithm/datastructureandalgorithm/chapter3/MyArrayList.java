@@ -1,5 +1,6 @@
 package cn.hl.algorithm.datastructureandalgorithm.chapter3;
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -42,9 +43,10 @@ public class MyArrayList<E> implements Iterable<E>{
 	/**
 	 * 初始化数组
 	 */
+	@SuppressWarnings("unchecked")
 	private void doClear() {
 		theSize = 0;
-		ensureCapacity(DEFAULT_CAPACITY);
+		theItems = (E[]) new Object[DEFAULT_CAPACITY];
 	}
 	/**
 	 * 返回当前元素的数量
@@ -95,16 +97,11 @@ public class MyArrayList<E> implements Iterable<E>{
 	 * 数组扩容
 	 * @param newCapacity
 	 */
-	@SuppressWarnings("unchecked")
 	private void ensureCapacity(int newCapacity) {
 		if(newCapacity < theSize) {
 			return;
 		}
-		E[] old = theItems;
-		theItems = (E[]) new Object[newCapacity];
-		for(int i=0;i<size();i++) {
-			theItems[i] = old[i];
-		}
+		theItems = Arrays.copyOf(theItems, newCapacity);
 	}
 	/**
 	 * 在表末尾插入一个元素并返回是否成功,无需移动元素
