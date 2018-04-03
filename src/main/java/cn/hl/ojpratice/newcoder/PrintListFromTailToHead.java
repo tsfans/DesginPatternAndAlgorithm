@@ -3,6 +3,8 @@ package cn.hl.ojpratice.newcoder;
 import java.util.ArrayList;
 import java.util.Stack;
 
+import cn.hl.ojpratice.common.ListNode;
+
 public class PrintListFromTailToHead {
 
 	/**
@@ -34,12 +36,5 @@ public class PrintListFromTailToHead {
         for(Integer i:array) {
         	System.out.println(i);
         }
-	}
-}
-class ListNode{
-	int val;
-	ListNode next = null;
-	ListNode(int val){
-		this.val = val;
 	}
 }
