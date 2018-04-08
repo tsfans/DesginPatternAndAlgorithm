@@ -1,4 +1,4 @@
-package cn.hl.algorithm.datastructureandalgorithm.chapter3;
+package cn.hl.algorithm.datastructureandalgorithm.chapter4;
 
 /**
  * 树的一般实现

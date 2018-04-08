@@ -1,4 +1,6 @@
-package cn.hl.algorithm.datastructureandalgorithm.chapter3;
+package cn.hl.algorithm.datastructureandalgorithm.chapter4;
+
+import cn.hl.algorithm.datastructureandalgorithm.chapter3.UnderflowException;
 
 /**
  * 二叉查找树实现

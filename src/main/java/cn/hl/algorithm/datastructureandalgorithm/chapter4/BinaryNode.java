@@ -1,4 +1,4 @@
-package cn.hl.algorithm.datastructureandalgorithm.chapter3;
+package cn.hl.algorithm.datastructureandalgorithm.chapter4;
 
 /**
  * 二叉树的一般实现
