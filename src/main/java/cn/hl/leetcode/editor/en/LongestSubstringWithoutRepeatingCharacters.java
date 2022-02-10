@@ -41,7 +41,7 @@ package cn.hl.leetcode.editor.en;
 public class LongestSubstringWithoutRepeatingCharacters{
       public static void main(String[] args) {
            Solution solution = new LongestSubstringWithoutRepeatingCharacters().new Solution();
-          int max = solution.lengthOfLongestSubstring("pwwkew");
+          int max = solution.lengthOfLongestSubstring("abcabcbb");
           System.out.println(max);
       }
       //leetcode submit region begin(Prohibit modification and deletion)
@@ -50,13 +50,13 @@ class Solution {
         int max = 0;
         String curr = null;
         int start = 0;
-        int end = start + 1;
-        while (end <= s.length()){
+        int end = 0;
+        while (end < s.length()){
             curr = s.substring(start, end);
-            max = end - start > max ? end - start : max;
-            if(end < s.length() && curr.contains(String.valueOf(s.charAt(end)))){
+            if(curr.contains(String.valueOf(s.charAt(end)))){
                 start += curr.indexOf(s.charAt(end)) + 1;
             }
+            max = Math.max(end - start + 1, max);
             end++;
         }
         return max;
