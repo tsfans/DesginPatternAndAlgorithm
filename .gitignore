@@ -35,3 +35,5 @@ hs_err_pid*
 #*.pdf
 build/
 target/
+.sts4-cache/
+*.iml

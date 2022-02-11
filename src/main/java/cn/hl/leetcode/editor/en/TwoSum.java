@@ -51,28 +51,14 @@ public class TwoSum{
       public static void main(String[] args) {
           Solution solution = new TwoSum().new Solution();
           int [] nums = new int[]{3,2,4};
-          int[] result = solution.twoSum2(nums, 6);
+          int[] result = solution.twoSum(nums, 6);
           for (int r : result){
               System.out.println(r);
           }
       }
       //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    public int[] twoSum1(int[] nums, int target) {
-        if(nums == null || nums.length < 2){
-            return new int[]{};
-        }
-        for (int i = 0; i < nums.length; i++) {
-            for(int j = i + 1; j < nums.length ; j++){
-                if(nums[i] + nums[j] == target){
-                    return new int[]{i, j};
-                }
-            }
-        }
-        return new int[]{};
-    }
-
-        public int[] twoSum2(int[] nums, int target) {
+        public int[] twoSum(int[] nums, int target) {
             if(nums == null || nums.length < 2){
                 return null;
             }
@@ -89,4 +75,17 @@ class Solution {
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
+    public int[] twoSum1(int[] nums, int target) {
+        if(nums == null || nums.length < 2){
+            return new int[]{};
+        }
+        for (int i = 0; i < nums.length; i++) {
+            for(int j = i + 1; j < nums.length ; j++){
+                if(nums[i] + nums[j] == target){
+                    return new int[]{i, j};
+                }
+            }
+        }
+        return new int[]{};
+    }
   }
