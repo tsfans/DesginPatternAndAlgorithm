@@ -57,11 +57,13 @@ public class ReverseLinkedList {
      */
     class Solution {
         public ListNode reverseList2(ListNode head) {
+            // base case
             if (head == null || head.next == null) {
                 return head;
             }
+            // A(head)->B->C->D>NULL => A(head)->B->NULL D->C->B->NULL
             ListNode last = reverseList(head.next);
-            // A(head)->B->NULL => A(head)->B->A => B->A->NULL
+            // A(head)->B->NULL D->C->B->NULL => D->C->B->A->NULL
             head.next.next = head;
             head.next = null;
             return last;

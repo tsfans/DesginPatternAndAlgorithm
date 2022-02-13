@@ -52,7 +52,11 @@ public class ReverseLinkedListIi {
      * }
      */
     class Solution {
-        public ListNode reverseBetween(ListNode head, int left, int right) {
+
+        /**
+         * 迭代实现,时间复杂度O(N),空间复杂度O(1)
+         */
+        public ListNode reverseBetween2(ListNode head, int left, int right) {
             int pos = 1;
             ListNode l = head;
             ListNode prev = null;
@@ -80,7 +84,7 @@ public class ReverseLinkedListIi {
                     }
                     l.next = prev;
                 }
-                if(pos > right){
+                if (pos > right) {
                     // 无需再迭代
                     break;
                 }
@@ -95,6 +99,35 @@ public class ReverseLinkedListIi {
             }
             // 左边界为空则右边界为新的head
             return l1 == null ? r1 : head;
+        }
+
+        ListNode next = null;
+
+        /**
+         * 递归实现,时间复杂度O(N),空间复杂度O(N)
+         */
+        public ListNode reverseBetween(ListNode head, int left, int right) {
+            // base case
+            if (left == 1) {
+                // 左边界为头结点时可复用反转第1-n个节点的代码
+                return reverseListN(head, right);
+            }
+            // 对于head.next反转区间为[left-1, right -1]
+            head.next = reverseBetween(head.next, left - 1, right - 1);
+            return head;
+        }
+
+        public ListNode reverseListN(ListNode head, int n) {
+            // base case
+            if (n == 1) {
+                // 记录后驱节点
+                next = head.next;
+                return head;
+            }
+            ListNode last = reverseListN(head.next, n - 1);
+            head.next.next = head;
+            head.next = next;
+            return last;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
