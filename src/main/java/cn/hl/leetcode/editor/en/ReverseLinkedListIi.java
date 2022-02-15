@@ -56,7 +56,7 @@ public class ReverseLinkedListIi {
         /**
          * 迭代实现,时间复杂度O(N),空间复杂度O(1)
          */
-        public ListNode reverseBetween2(ListNode head, int left, int right) {
+        public ListNode reverseBetween(ListNode head, int left, int right) {
             int pos = 1;
             ListNode l = head;
             ListNode prev = null;
@@ -93,12 +93,14 @@ public class ReverseLinkedListIi {
             }
             if (l1 != null) {
                 l1.next = r1;
+            } else {
+                // 左边界为空则右边界为新的head
+                head = r1;
             }
             if (l2 != null) {
                 l2.next = r2;
             }
-            // 左边界为空则右边界为新的head
-            return l1 == null ? r1 : head;
+            return head;
         }
 
         ListNode next = null;
@@ -106,7 +108,7 @@ public class ReverseLinkedListIi {
         /**
          * 递归实现,时间复杂度O(N),空间复杂度O(N)
          */
-        public ListNode reverseBetween(ListNode head, int left, int right) {
+        public ListNode reverseBetween2(ListNode head, int left, int right) {
             // base case
             if (left == 1) {
                 // 左边界为头结点时可复用反转第1-n个节点的代码
