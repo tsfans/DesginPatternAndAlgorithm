@@ -41,12 +41,12 @@ public class UniqueBinarySearchTrees {
          */
         public int numTrees(int n) {
             if (n == 0) return 0;
-            memo = new int[n + 1][n + 1];
+            memo = new int[n + 1];
             return count(1, n);
         }
 
         // 借助备忘录减少重复查找
-        int[][] memo;
+        int[] memo;
 
         /**
          * 对于[lo,hi]的区间递归求解组合数
@@ -57,7 +57,7 @@ public class UniqueBinarySearchTrees {
                 return 1;
             }
             // 先检查备忘录, 有结果则直接返回
-            if (memo[lo][hi] != 0) return memo[lo][hi];
+            if (memo[hi-lo] != 0) return memo[hi-lo];
             int res = 0;
             for (int i = lo; i <= hi; i++) {
                 int leftCount = count(lo, i - 1);
@@ -65,7 +65,7 @@ public class UniqueBinarySearchTrees {
                 res += leftCount * rightCount;
             }
             // 保存结果到备忘录
-            memo[lo][hi] = res;
+            memo[hi-lo] = res;
             return res;
         }
     }
