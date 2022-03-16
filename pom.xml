@@ -36,6 +36,13 @@
 			<version>5.4.2</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+		    <groupId>com.thoughtworks.xstream</groupId>
+		    <artifactId>xstream</artifactId>
+		    <version>1.4.19</version>
+		</dependency>
+
 
 	</dependencies>
 
