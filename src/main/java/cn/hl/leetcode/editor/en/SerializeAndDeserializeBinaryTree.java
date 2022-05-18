@@ -183,7 +183,7 @@ public class SerializeAndDeserializeBinaryTree {
                 return null;
             }
             TreeNode root = new TreeNode(Integer.valueOf(rootVal));
-            // 按后序顺序倒着构造跟右左
+            // 按后序顺序倒着构造根右左
             root.right = deserializePostOrder(list);
             root.left = deserializePostOrder(list);
             return root;

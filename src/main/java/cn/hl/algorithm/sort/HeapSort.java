@@ -46,22 +46,22 @@ public class HeapSort {
     /**
      * 维护最大堆结构
      */
-    private static void maxHeapify(int[] arr, int target, int heapSize) {
+    private static void maxHeapify(int[] arr, int curr, int heapSize) {
         // 存在左子节点
-        while (left(target) <= heapSize - 1) {
-            int child = left(target);
-            int right = right(target);
-            if (right <= heapSize - 1 && arr[child] < arr[right]) {
+        while (left(curr) < heapSize) {
+            int child = left(curr);
+            int right = right(curr);
+            if (right < heapSize && arr[child] < arr[right]) {
                 // 右子节点也存在的话取大的一个
                 child++;
             }
-            if (arr[target] >= arr[child]) {
+            if (arr[curr] >= arr[child]) {
                 // 已经比最大子节点大,终止循环
                 break;
             }
             // 否则交换父子节点位置
-            swap(arr, target, child);
-            target = child;
+            swap(arr, curr, child);
+            curr = child;
         }
     }
 
