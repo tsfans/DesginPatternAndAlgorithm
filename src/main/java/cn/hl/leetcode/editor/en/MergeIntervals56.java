@@ -33,7 +33,6 @@ package cn.hl.leetcode.editor.en;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 public class MergeIntervals56 {
     public static void main(String[] args) {
@@ -43,7 +42,6 @@ public class MergeIntervals56 {
         int[][] res = solution.merge(intervals);
         List<int[]> list = new ArrayList<>();
         list.toArray(new int[0][]);
-        Map.Entry
         System.out.println(res.length);
     }
 
