@@ -37,3 +37,4 @@ build/
 target/
 .sts4-cache/
 *.iml
+.vscode/
