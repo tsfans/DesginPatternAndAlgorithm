@@ -4,7 +4,11 @@ import (
 	"tsfans/practice/common/util"
 )
 
-// 2.Add Two Numbers https://leetcode.com/problems/add-two-numbers/
+/**
+ * 2.Add Two Numbers https://leetcode.com/problems/add-two-numbers/
+ * Time complexity: O(max(m,n))
+ * Space complexity: O(max(m,n))
+ */
 func addTwoNumbers(l1 *util.ListNode, l2 *util.ListNode) *util.ListNode {
 	if l1 == nil {
 		return l2
@@ -48,7 +52,11 @@ func addTwoNumbers(l1 *util.ListNode, l2 *util.ListNode) *util.ListNode {
 	return head
 }
 
-// 3. Longest Substring Without Repeating Characters https://leetcode.com/problems/longest-substring-without-repeating-characters/
+/**
+ * 3. Longest Substring Without Repeating Characters https://leetcode.com/problems/longest-substring-without-repeating-characters/
+ * Time complexity: O(n)
+ * Space complexity: O(n)
+ */
 func lengthOfLongestSubstring(s string) int {
 	if len(s) == 0 {
 		return 0
