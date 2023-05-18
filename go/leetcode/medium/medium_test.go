@@ -27,3 +27,13 @@ func TestLengthOfLongestSubstring(t *testing.T) {
 		t.Errorf("Test failed, expected: '%v', got:  '%v'", expected, actual)
 	}
 }
+
+func TestLongestPalindrome(t *testing.T) {
+	s := "babad"
+	expected := "bab"
+	actual := longestPalindrome(s)
+	fmt.Println(actual)
+	if expected != actual {
+		t.Errorf("Test failed, expected: '%v', got:  '%v'", expected, actual)
+	}
+}

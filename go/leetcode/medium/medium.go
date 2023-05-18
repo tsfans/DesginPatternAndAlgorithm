@@ -80,3 +80,39 @@ func lengthOfLongestSubstring(s string) int {
 	}
 	return maxLen
 }
+
+/**
+ * 5. Longest Palindromic Substring https://leetcode.com/problems/longest-palindromic-substring/
+ * Time complexity: O(n^2)
+ * Space complexity: O(1)
+ */
+func longestPalindrome(s string) string {
+	// base case
+	if len(s) <= 1 {
+		return s
+	}
+	res := ""
+	for i := 0; i < len(s); i++ {
+		// odd case, like "aba", middle char is s[i]
+		tmp := palindrome(s, i, i)
+		if len(tmp) > len(res) {
+			res = tmp
+		}
+		// even case, like "abba", middle chars are s[i] and s[i+1]
+		tmp = palindrome(s, i, i+1)
+		if len(tmp) > len(res) {
+			res = tmp
+		}
+	}
+	return res
+}
+
+func palindrome(s string, l, r int) string {
+	// expand the window
+	for l >= 0 && r < len(s) && s[l] == s[r] {
+		l--
+		r++
+	}
+	// return the substring
+	return s[l+1 : r]
+}
