@@ -39,9 +39,9 @@ func TestLongestPalindrome(t *testing.T) {
 }
 
 func TestZigzagConversion(t *testing.T) {
-	s := "AB"
+	s := "PAYPALISHIRING"
 	expected := "PAHNAPLSIIGYIR"
-	actual := zigzagConversion(s, 1)
+	actual := zigzagConversion(s, 3)
 	fmt.Println(actual)
 	if expected != actual {
 		t.Errorf("Test failed, expected: '%v', got:  '%v'", expected, actual)
