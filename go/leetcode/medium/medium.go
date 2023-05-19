@@ -116,3 +116,32 @@ func palindrome(s string, l, r int) string {
 	// return the substring
 	return s[l+1 : r]
 }
+
+/**
+ * 6. Zigzag Conversion https://leetcode.com/problems/zigzag-conversion/
+ * Time complexity: O(n)
+ * Space complexity: O(n)
+ */
+func zigzagConversion(s string, numRows int) string {
+	if numRows == 1 {
+		return s
+	}
+	var res string
+	var rows = make([]string, numRows)
+	var i, flag int
+	for _, v := range s {
+		rows[i] += string(v)
+		if i == 0 {
+			// move down to next row while on top
+			flag = 1
+		} else if i == numRows-1 {
+			// move up to previous row while on bottom
+			flag = -1
+		}
+		i += flag
+	}
+	for _, v := range rows {
+		res += v
+	}
+	return res
+}
