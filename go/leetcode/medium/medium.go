@@ -1,6 +1,8 @@
 package medium
 
 import (
+	"fmt"
+	"math"
 	"tsfans/practice/common/util"
 )
 
@@ -144,4 +146,66 @@ func zigzagConversion(s string, numRows int) string {
 		res += v
 	}
 	return res
+}
+
+/**
+ * 7. Reverse Integer https://leetcode.com/problems/reverse-integer/
+ */
+func reverseInteger(x int) int {
+	if x == 0 {
+		return x
+	}
+	neg := x < 0
+	if neg {
+		x = -x
+	}
+	for x%10 == 0 {
+		x = x / 10
+	}
+	xs := fmt.Sprintf("%d", x)
+	chars := []byte(xs)
+	for i := 0; i < len(xs)/2; i++ {
+		chars[i], chars[len(chars)-i-1] = chars[len(chars)-i-1], chars[i]
+	}
+	out := isOutInt32(string(chars), neg)
+	if out {
+		return 0
+	} else {
+		var res int
+		for i, v := range chars {
+			mul := math.Pow(10, float64(len(chars)-i-1))
+			res += int(v-'0') * int(mul)
+		}
+		if neg {
+			return -res
+		}
+		return res
+	}
+}
+
+func isOutInt32(s string, neg bool) bool {
+	var limit string
+	if neg {
+		// remove negative symbol
+		limit = fmt.Sprintf("%d", math.MinInt32)[1:]
+	} else {
+		limit = fmt.Sprintf("%d", math.MaxInt32)
+	}
+	// if the length of s is greater than limit, return false
+	if len(s) > len(limit) {
+		return true
+	}
+	// if the length of s is less than limit, return true
+	if len(s) < len(limit) {
+		return false
+	}
+	for i := range s {
+		if s[i] > limit[i] {
+			return true
+		}
+		if s[i] < limit[i] {
+			return false
+		}
+	}
+	return false
 }

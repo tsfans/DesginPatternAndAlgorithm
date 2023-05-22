@@ -47,3 +47,13 @@ func TestZigzagConversion(t *testing.T) {
 		t.Errorf("Test failed, expected: '%v', got:  '%v'", expected, actual)
 	}
 }
+
+func TestReverseInteger(t *testing.T) {
+	x := -2147483412
+	expected := -2143847412
+	actual := reverseInteger(x)
+	fmt.Println(actual)
+	if expected != actual {
+		t.Errorf("Test failed, expected: '%v', got:  '%v'", expected, actual)
+	}
+}
